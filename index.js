@@ -1,23 +1,36 @@
-const score_el = document.getElementById("score");
+const num1 = Math.ceil(Math.random() * 10);
+const num2 = Math.ceil(Math.random() * 10);
 
-const first_el = document.getElementById("first_num");
-const second_el = document.getElementById("second_num");
-const submit_el = document.getElementById("add");
-console.log(submit_el);
-const input_answer = document.getElementById("answer");
+const questionnEl = document.getElementById("question");
+const formEl = document.getElementById("form");
+const inputEl = document.getElementById("input");
+const btn = document.getElementById("btn_submit");
+const scoreEl = document.getElementById("score");
 
-const first_random = Math.floor(Math.random() * 9);
-const second_random = Math.floor(Math.random() * 9);
-console.log(first_random, typeof first_random);
-console.log(second_random, typeof second_random);
+questionnEl.innerText = `What is ${num1} multiply by ${num2}?`;
 
-first_el.innerText = first_random;
-second_el.innerText = second_random;
+const correctAns = num1 * num2;
+console.log(correctAns);
 
-submit_el.addEventListener("click", () => {
-  let mult = first_random * second_random;
-  let input_num = Number(input_answer.value);
-  console.log(mult);
-  console.log(input_num, typeof input_num);
-  let scoring = Number(score_el.innerText);
+let score = JSON.parse(localStorage.getItem("score"));
+
+if (!score) {
+  score = 0;
+}
+
+scoreEl.innerText = `score: ${score}`;
+
+formEl.addEventListener("submit", () => {
+  const userAns = +inputEl.value;
+  if (userAns === correctAns) {
+    score++;
+    updateLocalStorage();
+  } else {
+    score--;
+    updateLocalStorage();
+  }
 });
+
+function updateLocalStorage() {
+  localStorage.setItem("score", JSON.stringify(score));
+}
