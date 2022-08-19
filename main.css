@@ -34,6 +34,12 @@ input {
   color: lightgray;
 }
 
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .btn {
   background-color: rgb(221, 152, 3);
   color: #fff;
