@@ -1,50 +1,56 @@
 body {
-  background: url("./images/katsuma-tanaka-msPoWrlNYBY-unsplash.jpg");
-  background-repeat: none;
-  background-size: cover;
-  overflow: hidden;
   margin: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  background: url("./images/katsuma-tanaka-msPoWrlNYBY-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.box {
-  border-radius: 5px;
-  width: 300px;
-  height: 300px;
-  background: gainsboro;
-  margin-top: 20vh;
-}
-
-p {
-  text-align: right;
+.form {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
   margin: 10px;
 }
 
-h3 {
+input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 25px;
   text-align: center;
-  color: rgb(251, 78, 15);
-}
-
-#answer {
-  font-size: 20px;
-  margin-left: 20px;
-}
-
-#add {
   padding: 10px;
-  margin: 40px;
-  margin-left: 100px;
-  background-color: aquamarine;
-  border: none;
-  border-radius: 20px;
-  font-size: 16px;
-  font-weight: 900;
+  border: solid 4px rgb(3, 111, 88);
+  color: rgb(46, 48, 42);
+  border-radius: 5px;
 }
 
-#add:hover {
-  background-color: #000;
+.input::placeholder {
+  color: lightgray;
+}
+
+.btn {
+  background-color: rgb(221, 152, 3);
   color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: 6px 4px 8px rgb(46, 48, 42);
+}
+
+.btn:hover {
+  filter: brightness(0.9);
   cursor: pointer;
+}
+
+.score {
+  color: red;
+  text-align: right;
 }
